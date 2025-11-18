@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>gowtham portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <div class="brand">gowtham k</div>
+
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-left">
+        <h1 id="hero-title" class="hero-title">Hi — I'm <span style="color:#0ea5a4">gowtham</span></h1>
+        <p class="hero-sub">Frontend developer &amp; UI enthusiast. I build responsive web apps, clean UIs, and accessible experiences.</p>
+        <div class="cta-row">
+          <a class="btn" href="projects.html">View Projects</a>
+          <a class="btn secondary" href="contact.html">Contact Me</a>
+        </div>
+
+        <div style="margin-top:18px" class="small">
+          <strong>Location:</strong> Chennai, India · <strong>Available for:</strong> Internships / Freelance
+        </div>
+      </div>
+
+      <div class="hero-img" role="img" aria-label="Profile illustration">
+        <img src="https://img00.deviantart.net/68bb/i/2017/061/b/3/obito_uchiha__by_noestoy_aqui-db106i9.png"
+             alt="Profile illustration" />
+      </div>
+    </section>
+
+    <!-- ABOUT + SKILLS -->
+    <div class="grid-2">
+      <section class="card" aria-labelledby="about-title">
+        <h2 id="about-title">About Me</h2>
+        <p class="small">I code user interfaces and turn designs into fast, accessible web apps. I enjoy learning modern JS frameworks and improving UX.</p>
+        <div class="hr"></div>
+        <p>Experience with HTML, CSS, JavaScript, React, Node (basic), and relational databases. Passionate about clean code and performance.</p>
+      </section>
+
+      <aside class="card" aria-labelledby="skills-title">
+        <h3 id="skills-title">Skills</h3>
+        <div class="skills">
+          <span class="chip">HTML</span>
+          <span class="chip">CSS</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">React</span>
+          <span class="chip">Git</span>
+          <span class="chip">Responsive Design</span>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Featured Projects -->
+    <section aria-labelledby="projects-title" style="margin-bottom:28px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px;">
+        <h2 id="projects-title">Featured Projects</h2>
+        <div class="small">Checkout more on the Projects page</div>
+      </div>
+
+      <div class="projects-grid" style="margin-top:12px;">
+        <!-- project 1 -->
+        <article class="project-card" data-category="web">
+          <img class="project-thumb" src="https://via.placeholder.com/800x400.png?text=Project+1" alt="Project 1">
+          <div class="project-body">
+            <h3 class="project-title">Project One</h3>
+            <p class="project-desc">A responsive landing page built with HTML, CSS and small JS interactions.</p>
+            <div class="project-actions">
+              <a class="btn" href="projects.html#p1">Details</a>
+              <a class="small" href="#" target="_blank" rel="noopener">Live</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- project 2 -->
+        <article class="project-card" data-category="app">
+          <img class="project-thumb" src="https://via.placeholder.com/800x400.png?text=Project+2" alt="Project 2">
+          <div class="project-body">
+            <h3 class="project-title">Project Two</h3>
+            <p class="project-desc">A small React app demonstrating component-based UI patterns.</p>
+            <div class="project-actions">
+              <a class="btn" href="projects.html#p2">Details</a>
+              <a class="small" href="#" target="_blank" rel="noopener">Repo</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- project 3 -->
+        <article class="project-card" data-category="ui">
+          <img class="project-thumb" src="https://via.placeholder.com/800x400.png?text=Project+3" alt="Project 3">
+          <div class="project-body">
+            <h3 class="project-title">Project Three</h3>
+            <p class="project-desc">UI component library examples and reusable cards.</p>
+            <div class="project-actions">
+              <a class="btn" href="projects.html#p3">Details</a>
+              <a class="small" href="#" target="_blank" rel="noopener">Demo</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div>© 2025 gowtham · Built with HTML, CSS & JS</div>
+    </footer>
+  </div>
+</main>
+
+<script src="assets/script.js"></script>
+</body>
+</html>

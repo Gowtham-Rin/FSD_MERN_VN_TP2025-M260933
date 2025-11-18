@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card Component</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f3f3f3;
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .card {
+        width: 300px;
+        height: 400px;
+        background: #ffffff;
+        border: 3px dashed #888; 
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+      }
+
+      .card-content {
+        padding: 15px;
+        flex-grow: 1;
+      }
+
+      .card-title {
+        font-size: 20px;
+        margin-bottom: 8px;
+        color: #333;
+      }
+
+      .card-desc {
+        font-size: 14px;
+        color: #555;
+        line-height: 1.5;
+      }
+
+      .card button {
+        background-color: #0077ff;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 0 0 10px 10px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 16px;
+        transition: 0.3s;
+        margin-top: auto;
+      }
+
+      .card button:hover {
+        background-color: #005fcc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <img
+        src="https://img00.deviantart.net/68bb/i/2017/061/b/3/obito_uchiha__by_noestoy_aqui-db106i9.png"
+        alt="Card Image" style="background-position: center; background-size: contain; background-repeat: no-repeat; object-fit:contain;"
+        />
+
+      <div class="card-content">
+        <h2 class="card-title">obito</h2>
+        <p class="card-desc">
+          This is a sample card component showcasing an image, title,
+          description, and a button. The card uses a dashed border style.
+        </p>
+      </div>
+
+      <button>Learn More</button>
+    </div>
+  </body>
+</html>

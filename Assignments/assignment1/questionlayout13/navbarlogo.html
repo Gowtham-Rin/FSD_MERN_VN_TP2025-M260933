@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fixed Header Example</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    /* ===== FIXED HEADER ===== */
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #1a1a1a;
+        padding: 15px 25px;
+        color: white;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 1000; /* stays above content */
+        box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+    }
+
+    /* Logo */
+    .logo {
+        font-size: 22px;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    /* Navigation menu */
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        margin-left: 20px;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+    nav a:hover {
+        color: #00e6e6;
+    }
+
+    /* Add space so content doesn't hide behind fixed header */
+    .content {
+        margin-top: 100px;
+        padding: 20px;
+        line-height: 1.8;
+    }
+</style>
+
+</head>
+<body>
+
+<header>
+    <!-- Logo Section -->
+    <div class="logo">MyLogo</div>
+
+    <!-- Navigation Links -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Portfolio</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<!-- Page Content -->
+<div class="content">
+    <h2>Scroll Down</h2>
+    <p>This is the page content. The header above stays fixed while scrolling.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra velit vitae nulla pretium...</p>
+    <p>Keep scrolling...</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, ex!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, ipsum?</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, blanditiis!</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, blanditiis!</p>
+</div>
+
+</body>
+</html>

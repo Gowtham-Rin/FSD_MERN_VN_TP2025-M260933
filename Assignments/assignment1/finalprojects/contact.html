@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — gowtham</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <div class="brand">gowtham</div>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <nav class="nav" role="navigation">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <h1>Contact Me</h1>
+    <p class="small">Want to work together or ask a question? Send a message — I’ll get back to you.</p>
+
+    <div style="display:grid; grid-template-columns:1fr; gap:18px; margin-top:18px;">
+      <section class="card" aria-labelledby="form-title">
+        <h2 id="form-title">Send a message</h2>
+
+        <form id="contact-form" aria-label="Contact form">
+          <div class="form-row row-2">
+            <input type="text" name="name" placeholder="Your name" required />
+            <input type="email" name="email" placeholder="Your email" required />
+          </div>
+
+          <div class="form-row">
+            <input type="text" name="subject" placeholder="Subject (optional)" />
+          </div>
+
+          <div class="form-row">
+            <textarea name="message" placeholder="Your message..." required></textarea>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:center; margin-top:10px;">
+            <button class="btn" type="submit">Send</button>
+            <div class="small">Or email directly: <a href="mailto:youremail@example.com">youremail@example.com</a></div>
+          </div>
+        </form>
+      </section>
+
+      <aside class="card" aria-labelledby="contact-info">
+        <h3 id="contact-info">Contact Information</h3>
+        <address style="font-style:normal;">
+          <strong>gowtham</strong><br>
+          Chennai, India<br>
+          Phone: <a href="tel:+911234567890">+91 9944685627</a><br>
+          Email: <a href="mailto:youremail@example.com">gowthamkumaresan18@example.com</a>
+        </address>
+
+        <div class="hr"></div>
+
+        <h4>Follow</h4>
+        <div style="display:flex; gap:10px;">
+          <a href="#" aria-label="GitHub">GitHub</a>
+          <a href="#" aria-label="LinkedIn">LinkedIn</a>
+          <a href="#" aria-label="Twitter">Twitter</a>
+        </div>
+      </aside>
+    </div>
+
+    <footer class="site-footer" style="margin-top:22px;">
+      © 2025 gowtham
+    </footer>
+  </div>
+</main>
+
+<script src="assets/script.js"></script>
+</body>
+</html>

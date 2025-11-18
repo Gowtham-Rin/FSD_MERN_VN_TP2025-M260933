@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects — Your Name</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <div class="brand">YourName</div>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <nav class="nav" role="navigation">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <section style="margin-bottom:18px;">
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:12px;">
+        <h1>Projects</h1>
+        <div>
+          <label for="project-filter" class="small">Filter:</label>
+          <select id="project-filter" style="padding:8px;border-radius:8px;border:1px solid #e6eef6;">
+            <option value="all">All</option>
+            <option value="web">Web</option>
+            <option value="app">App</option>
+            <option value="ui">UI</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects-grid" aria-live="polite">
+      <!-- FULL LIST of 6 example projects -->
+      <article class="project-card" id="p1" data-category="web">
+        <img class="project-thumb" src="https://via.placeholder.com/800x400.png?text=Landing+Page" alt="Landing page project">
+        <div class="project-body">
+          <h3 class="project-title">Landing Page</h3>
+          <p class="project-desc">A pixel-perfect, responsive landing page with animations and accessibility considerations.</p>
+          <div class="project-actions">
+            <a class="btn" href="#">View</a>
+            <a class="small" href="#" target="_blank" rel="noopener">Live</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card" id="p2" data-category="app">
+        <img class="project-thumb" src="https://via.placeholder.com/800x400.png?text=React+App" alt="React app project">
+        <div class="project-body">
+          <h3 class="project-title">React ToDo</h3>
+          <p class="project-desc">A CRUD React app demonstrating state management and component structure.</p>
+          <div class="project-actions">
+            <a class="btn" href="#">View</a>
+            <a class="small" href="#" target="_blank" rel="noopener">Repo</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card" id="p3" data-category="ui">
+        <img class="project-thumb" src="https://via.placeholder.com/800x400.png?text=Component+Kit" alt="UI components project">
+        <div class="project-body">
+          <h3 class="project-title">Component Kit</h3>
+          <p class="project-desc">A small design system with reusable UI components and docs.</p>
+          <div class="project-actions">
+            <a class="btn" href="#">View</a>
+            <a class="small" href="#" target="_blank" rel="noopener">Demo</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card" id="p4" data-category="web">
+        <img class="project-thumb" src="https://via.placeholder.com/800x400.png?text=Ecommerce" alt="Ecommerce project">
+        <div class="project-body">
+          <h3 class="project-title">E-commerce UI</h3>
+          <p class="project-desc">Styled product grid, filtering, and quick add interactions.</p>
+          <div class="project-actions">
+            <a class="btn" href="#">View</a>
+            <a class="small" href="#" target="_blank" rel="noopener">Live</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card" id="p5" data-category="app">
+        <img class="project-thumb" src="https://via.placeholder.com/800x400.png?text=Chat+App" alt="Chat app project">
+        <div class="project-body">
+          <h3 class="project-title">Chat App (prototype)</h3>
+          <p class="project-desc">Realtime UI prototype using websockets and simple auth flow.</p>
+          <div class="project-actions">
+            <a class="btn" href="#">View</a>
+            <a class="small" href="#" target="_blank" rel="noopener">Repo</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card" id="p6" data-category="ui">
+        <img class="project-thumb" src="https://via.placeholder.com/800x400.png?text=Data+Viz" alt="Data viz project">
+        <div class="project-body">
+          <h3 class="project-title">Data Visualization</h3>
+          <p class="project-desc">Interactive charts built with JavaScript and accessible semantics.</p>
+          <div class="project-actions">
+            <a class="btn" href="#">View</a>
+            <a class="small" href="#" target="_blank" rel="noopener">Demo</a>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <footer class="site-footer" style="margin-top:30px;">
+      <div class="center">© 2025 Your Name · <a href="index.html">Home</a></div>
+    </footer>
+  </div>
+</main>
+
+<script src="assets/script.js"></script>
+</body>
+</html>

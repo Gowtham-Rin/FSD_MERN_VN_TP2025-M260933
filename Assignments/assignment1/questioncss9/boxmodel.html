@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Box Model Example</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        padding: 20px;
+    }
+
+    .box {
+        background: #ffffff;
+        margin-bottom: 30px;
+        width: 300px;
+    }
+
+    .box1 {
+        margin: 20px;
+        padding: 15px;
+        border: 3px solid #ff0066;
+    }
+
+    .box2 {
+        margin: 30px;
+        padding: 25px;
+        border: 5px dashed #0099ff;
+    }
+
+    .box3 {
+        margin: 40px;
+        padding: 35px;
+        border: 8px double #00cc66;
+    }
+
+    .info {
+        font-size: 14px;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    h2 {
+        margin-top: 0;
+    }
+</style>
+
+</head>
+<body>
+
+<h2>CSS Box Model Demonstration</h2>
+
+<!-- Box 1 -->
+<div class="box box1">
+    <div class="info">
+        <strong>Box 1</strong><br>
+        <b>Margin:</b> 20px<br>
+        <b>Padding:</b> 15px<br>
+        <b>Border:</b> 3px solid pink (#ff0066)
+    </div>
+</div>
+
+<!-- Box 2 -->
+<div class="box box2">
+    <div class="info">
+        <strong>Box 2</strong><br>
+        <b>Margin:</b> 30px<br>
+        <b>Padding:</b> 25px<br>
+        <b>Border:</b> 5px dashed blue (#0099ff)
+    </div>
+</div>
+
+<!-- Box 3 -->
+<div class="box box3">
+    <div class="info">
+        <strong>Box 3</strong><br>
+        <b>Margin:</b> 40px<br>
+        <b>Padding:</b> 35px<br>
+        <b>Border:</b> 8px double green (#00cc66)
+    </div>
+</div>
+
+</body>
+</html>

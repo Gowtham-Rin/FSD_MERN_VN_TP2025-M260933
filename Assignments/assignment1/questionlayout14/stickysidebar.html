@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sticky Sidebar vs Fixed Element — Demo</title>
+  <style>
+    /* Basic page layout */
+    :root{
+      --sidebar-w: 200px;
+      --gap: 20px;
+      --bg: #f7fafc;
+      --card: #ffffff;
+      --muted: #556070;
+      --accent: #0ea5a4;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      background:var(--bg);
+      color:#0b1220;
+      line-height:1.5;
+    }
+
+    /* Container uses CSS grid: left column fixed width, right column flexible */
+    .layout {
+      display: grid;
+      grid-template-columns: var(--sidebar-w) 1fr;
+      gap: var(--gap);
+      max-width:1200px;
+      margin: 24px auto;
+      padding: 0 16px;
+      align-items:start;
+    }
+
+    /* SIDEBAR (left) */
+    aside.sidebar {
+      /* Visual styling */
+      background:var(--card);
+      padding:16px;
+      border-radius:10px;
+      box-shadow:0 6px 18px rgba(2,6,23,0.06);
+      height: fit-content;
+    }
+
+    /* Sticky behavior:
+       position: sticky keeps the element within the normal flow
+       but "sticks" it to the top of the viewport when scroll reaches it.
+       It respects its parent/container boundaries.
+    */
+    .sidebar .sticky-area {
+      position: sticky;
+      top: 16px; /* distance from top when it becomes "stuck" */
+    }
+
+    .sidebar h3 { margin:0 0 8px 0; }
+    .sidebar nav a {
+      display:block;
+      color:var(--muted);
+      text-decoration:none;
+      padding:8px 6px;
+      border-radius:6px;
+      margin:6px 0;
+    }
+    .sidebar nav a:hover { background: #f0fbfa; color: #047b74; }
+
+    /* A fixed element for comparison:
+       position: fixed removes the element from normal flow and fixes it
+       relative to the viewport. It will not move when scrolling, and it
+       does not respect container boundaries.
+    */
+    .fixed-note {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      background:#111827;
+      color:#fff;
+      padding:10px 14px;
+      border-radius:10px;
+      box-shadow: 0 8px 30px rgba(2,6,23,0.35);
+      font-size:13px;
+      z-index: 999;
+    }
+
+    /* MAIN content (right) */
+    main.content {
+      min-height: 600px;
+    }
+    .card {
+      background:var(--card);
+      padding:18px;
+      border-radius:10px;
+      box-shadow:0 6px 18px rgba(2,6,23,0.04);
+      margin-bottom:18px;
+    }
+
+    /* small screen adjustments: move sidebar on top to save space */
+    @media (max-width:800px){
+      .layout {
+        grid-template-columns: 1fr;
+      }
+      /* make sticky element behave like normal flow on small screens */
+      .sidebar { order: -1; }
+      .fixed-note { right:16px; bottom:16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="layout" role="main">
+    <!-- Left: Sidebar with a sticky area -->
+    <aside class="sidebar" aria-label="Sidebar">
+      <div class="sticky-area">
+        <h3>Contents</h3>
+        <nav>
+          <a href="#sec1">Section 1 — Introduction</a>
+          <a href="#sec2">Section 2 — Concepts</a>
+          <a href="#sec3">Section 3 — Examples</a>
+          <a href="#sec4">Section 4 — Advanced</a>
+          <a href="#sec5">Section 5 — Summary</a>
+        </nav>
+
+        <hr style="margin:12px 0; border:none; border-top:1px dashed #eee">
+
+        <p style="margin:0; color:var(--muted); font-size:13px;">
+          <strong>Note:</strong><br>
+          This sidebar uses <code>position: sticky</code> with <code>top:16px</code>.
+          It stays visible inside its container and will "unstick" once the container's bottom is reached.
+        </p>
+      </div>
+    </aside>
+
+    <!-- Right: Main scrolling content -->
+    <main class="content" aria-label="Main content">
+      <!-- multiple long cards to create scrolling -->
+      <section id="sec1" class="card">
+        <h2>Section 1 — Introduction</h2>
+        <p>
+          This demo shows a sticky sidebar on the left and a fixed box at the bottom-right for comparison.
+          Scroll this main area — the sidebar will remain visible (sticky) while the main content scrolls.
+        </p>
+        <p>
+          Sticky positioning keeps the element within the normal flow of the document and it only becomes fixed
+          once a defined threshold (top) is crossed.
+        </p>
+      </section>
+
+      <section id="sec2" class="card">
+        <h2>Section 2 — How sticky works</h2>
+        <p>
+          <strong>position: sticky</strong> acts like <code>position: relative</code> until the viewport reaches
+          the offset (e.g. top:16px); then it behaves like <code>position: fixed</code> but only within its parent.
+        </p>
+        <p>
+          Because it's bounded by the container, it won't overlap footer content if the container ends before the page.
+        </p>
+      </section>
+
+      <section id="sec3" class="card">
+        <h2>Section 3 — Fixed vs Sticky</h2>
+        <p>
+          <strong>position: fixed</strong> (see the dark box at bottom-right) is attached to the viewport.
+          It remains visible no matter where you scroll and does not influence or get influenced by the layout flow.
+        </p>
+        <p>
+          Use <code>fixed</code> for global UI controls (e.g., chat widget, back-to-top button). Use <code>sticky</code>
+          when you want an element anchored while still behaving like part of the layout.
+        </p>
+      </section>
+
+      <section id="sec4" class="card">
+        <h2>Section 4 — Practical uses</h2>
+        <ul>
+          <li>Table of contents that follows the reader.</li>
+          <li>Sticky headers that remain visible while reading long articles.</li>
+          <li>Sidebar filters on e-commerce pages.</li>
+        </ul>
+      </section>
+
+      <section id="sec5" class="card">
+        <h2>Section 5 — Try it out</h2>
+        <p>
+          Resize the browser and scroll. On narrow screens the layout stacks and the sidebar appears above the content.
+          The small-screen behavior ensures usability on phones and tablets.
+        </p>
+      </section>
+
+      <!-- add more filler to ensure plenty of scrolling -->
+      <section class="card">
+        <h3>Extra Content</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, dolores. Reiciendis, eaque! Amet
+          repellendus pariatur, impedit beatae ipsum at accusantium.
+        </p>
+        <p>
+          (Repeat this paragraph multiple times to test scrolling; the sticky sidebar should remain visible.)
+        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, doloribus.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, doloribus.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, doloribus.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, doloribus.</p>
+      </section>
+    </main>
+  </div>
+
+  <!-- Fixed element for comparison: remains attached to viewport always -->
+  <div class="fixed-note" role="note" aria-hidden="false">
+    Fixed box — uses <code>position: fixed</code>
+  </div>
+
+</body>
+</html>

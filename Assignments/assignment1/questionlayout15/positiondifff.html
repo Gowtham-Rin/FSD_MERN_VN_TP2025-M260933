@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Positioning Example</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        height: 2000px; /* to allow scrolling */
+        background: #f4f4f4;
+    }
+
+    .container {
+        width: 600px;
+        height: 300px;
+        background: #ddd;
+        padding: 20px;
+        position: relative; /* parent for absolute box */
+        border-radius: 8px;
+        margin-bottom: 60px;
+    }
+
+    .box {
+        width: 150px;
+        height: 150px;
+        color: white;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 6px;
+    }
+
+    /* Static Box */
+    .static-box {
+        background: #333;
+    }
+
+    /* Relative Box (shifted 20px right + 20px down) */
+    .relative-box {
+        background: #0077ff;
+        position: relative;
+        top: 20px;
+        left: 20px;
+    }
+
+    /* Absolute Box (inside the container bottom-right) */
+    .absolute-box {
+        background: #00b96f;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+    /* Fixed Box (stuck bottom-left of screen while scrolling) */
+    .fixed-box {
+        background: #ff5757;
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        z-index: 999;
+    }
+</style>
+
+</head>
+<body>
+
+<h2>Positioning Example (Static, Relative, Absolute, Fixed)</h2>
+
+<div class="container">
+    <div class="box static-box">Static Box</div>
+    <div class="box relative-box">Relative Box</div>
+    <div class="box absolute-box">Absolute Box</div>
+</div>
+
+<!-- Fixed box stays on the screen -->
+<div class="box fixed-box">Fixed Box</div>
+
+<p>Scroll down the page to see the fixed box stay in place.</p>
+
+</body>
+</html>

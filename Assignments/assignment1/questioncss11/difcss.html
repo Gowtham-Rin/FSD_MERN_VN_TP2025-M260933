@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Methods Example</title>
+
+  
+    <style>
+        /* Internal CSS applied to section header */
+        .internal-section {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
+
+    <!--EXTERNAL CSS FILE LINK -->
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+  <!-- inline css -->
+    <h1 style="color: crimson; text-align: center;">
+        This Heading Uses Inline CSS
+    </h1>
+
+    <!-- INTERNAL CSS SECTION -->
+    <section class="internal-section">
+        <h2>This Section Uses Internal CSS</h2>
+        <p>The styling above is done using internal CSS inside &lt;style&gt; tag.</p>
+    </section>
+
+    <!-- EXTERNAL CSS SECTION -->
+    <div class="external-box">
+        <h3>This Box Uses External CSS</h3>
+        <p>
+            The external CSS file (styles.css) controls this section's layout, border, 
+            padding, and margin.
+        </p>
+    </div>
+
+</body>
+</html>

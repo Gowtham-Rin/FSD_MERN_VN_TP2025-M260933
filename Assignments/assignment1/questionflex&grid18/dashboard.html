@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Dashboard Grid Layout</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: #f3f6f9;
+    color: #0b1220;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+
+
+  .dashboard {
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "header header header"
+      "sidebar main widgets"
+      "footer footer footer";
+    gap: 18px;
+    align-items: start;
+  }
+
+  header.site-header {
+    grid-area: header;
+    background: white;
+    padding: 16px 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(2,6,23,0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  aside.sidebar {
+    grid-area: sidebar;
+    background: white;
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(2,6,23,0.04);
+  }
+  main.main {
+    grid-area: main;
+    background: white;
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(2,6,23,0.04);
+    min-height: 320px;
+  }
+  aside.widgets {
+    grid-area: widgets;
+    background: white;
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(2,6,23,0.04);
+  }
+  footer.site-footer {
+    grid-area: footer;
+    background: transparent;
+    padding: 12px 4px;
+    text-align: center;
+    color: #475569;
+    font-size: 14px;
+  }
+
+  /* ---------- Sidebar content ---------- */
+  .brand { font-weight: 700; font-size: 18px; }
+  .nav { margin-top: 12px; display:flex; flex-direction:column; gap:8px; }
+  .nav a { color:#0b1220; text-decoration:none; padding:8px 10px; border-radius:8px; }
+  .nav a:hover { background:#f1f7f6; }
+
+  /* ---------- Main content: simple dashboard cards ---------- */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .card {
+    background: linear-gradient(180deg,#ffffff,#fbfcfd);
+    padding: 14px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(2,6,23,0.04);
+  }
+  .card h3 { margin: 0 0 8px 0; font-size: 16px; }
+  .card p { margin:0; color:#475569; font-size:14px; }
+
+  /* ---------- Widgets panel ---------- */
+  .widget { margin-bottom: 12px; padding:12px; border-radius:8px; background:#fff; box-shadow: 0 4px 10px rgba(2,6,23,0.03); }
+  .widget h4 { margin:0 0 8px 0; font-size:15px; }
+
+  /* Footer small note */
+  .site-footer small { color:#94a3b8; }
+
+  /* ---------- Responsive: stack on small screens ---------- */
+  @media (max-width: 900px) {
+    .dashboard {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto 1fr auto;
+      grid-template-areas:
+        "header"
+        "sidebar"
+        "main"
+        "widgets"
+        "footer";
+      gap: 12px;
+    }
+    .cards { grid-template-columns: 1fr; }
+  }
+
+  /* Minor utility */
+  .muted { color: #64748b; font-size: 13px; }
+  .actions { display:flex; gap:8px; align-items:center; }
+  .btn {
+    background:#0ea5a4; color:white; border:0; padding:8px 10px; border-radius:8px; cursor:pointer;
+    font-weight:600;
+  }
+</style>
+</head>
+<body>
+
+<div class="dashboard" role="application" aria-label="Dashboard layout using CSS Grid">
+
+  <!-- Header (full width) -->
+  <header class="site-header" role="banner">
+    <div style="display:flex;gap:12px;align-items:center">
+      <div class="brand">Acme Dashboard</div>
+      <div class="muted">Overview</div>
+    </div>
+
+    <div class="actions" aria-hidden="false">
+      <input type="search" placeholder="Search..." style="padding:8px;border-radius:8px;border:1px solid #e6eef6;outline:none">
+      <button class="btn">New</button>
+    </div>
+  </header>
+
+  <!-- Sidebar (left, 1/4 width) -->
+  <aside class="sidebar" role="navigation" aria-label="Main navigation">
+    <div><strong>Navigation</strong></div>
+    <nav class="nav" aria-label="Sidebar links">
+      <a href="#">Dashboard</a>
+      <a href="#">Reports</a>
+      <a href="#">Analytics</a>
+      <a href="#">Settings</a>
+      <a href="#">Help</a>
+    </nav>
+
+    <hr style="margin:12px 0;border:none;border-top:1px solid #eef2f7">
+    <div class="muted" style="font-size:13px">Quick Stats</div>
+    <div style="display:flex;gap:8px;margin-top:8px">
+      <div style="flex:1;background:#f8fafc;padding:8px;border-radius:8px;text-align:center">
+        <div style="font-weight:700">1.2k</div>
+        <div class="muted" style="font-size:12px">Users</div>
+      </div>
+      <div style="flex:1;background:#f8fafc;padding:8px;border-radius:8px;text-align:center">
+        <div style="font-weight:700">24</div>
+        <div class="muted" style="font-size:12px">Alerts</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main content (center, 2/4 width) -->
+  <main class="main" role="main" aria-label="Main content">
+    <h2 style="margin-top:0">Welcome back, Admin</h2>
+    <p class="muted">Here's a snapshot of your platform activity.</p>
+
+    <!-- Cards grid inside main -->
+    <div class="cards" aria-hidden="false">
+      <div class="card">
+        <h3>Users</h3>
+        <p>Active: <strong>1,204</strong></p>
+      </div>
+      <div class="card">
+        <h3>Revenue</h3>
+        <p>This month: <strong>$12,340</strong></p>
+      </div>
+      <div class="card">
+        <h3>Conversion</h3>
+        <p>Rate: <strong>3.8%</strong></p>
+      </div>
+      <div class="card">
+        <h3>Tasks</h3>
+        <p>Open: <strong>18</strong></p>
+      </div>
+    </div>
+
+    <!-- Example larger content area -->
+    <section class="card">
+      <h3>Recent Activity</h3>
+      <ul style="margin:10px 0 0 18px;color:#475569">
+        <li>User <strong>jane_d</strong> signed up (2 hours ago)</li>
+        <li>Report exported (yesterday)</li>
+        <li>New comment on post #432</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Widget panel (right side, 1/4 width) -->
+  <aside class="widgets" role="complementary" aria-label="Widgets">
+    <div class="widget">
+      <h4>Top Countries</h4>
+      <p class="muted">USA, India, UK</p>
+    </div>
+
+    <div class="widget">
+      <h4>Notifications</h4>
+      <p class="muted">You have 3 system updates pending.</p>
+    </div>
+
+    <div class="widget">
+      <h4>Shortcuts</h4>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <button class="btn" style="background:#2563eb">Create Report</button>
+        <button class="btn" style="background:#06b6d4">Invite User</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Footer (full width) -->
+  <footer class="site-footer" role="contentinfo">
+    <div>© 2025 Acme Co. &middot; <small>Built with CSS Grid</small></div>
+  </footer>
+
+</div>
+
+</body>
+</html>

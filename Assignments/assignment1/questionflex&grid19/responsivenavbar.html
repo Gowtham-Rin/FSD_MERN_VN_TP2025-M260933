@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Navigation Menu</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    /* ============= BASE NAV STYLE ============= */
+    nav {
+        background: #1a1a1a;   /* desktop background */
+        padding: 15px;
+    }
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;             /* default: horizontal */
+        justify-content: center;
+        gap: 25px;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    nav ul li a:hover {
+        color: #00e6e6;
+    }
+
+
+    /* ============= MEDIUM SCREENS =============
+       (768px - 1024px)
+       Change background color to show breakpoint
+    ============================================ */
+    @media (min-width: 768px) and (max-width: 1024px) {
+        nav {
+            background: #005fcc;  /* BLUE background on medium screens */
+        }
+    }
+
+
+    /* ============= MOBILE SCREENS =============
+       (<= 768px)
+       Convert menu to vertical stacked layout
+    ============================================ */
+    @media (max-width: 768px) {
+        nav {
+            background: #333;     /* darker color for mobile */
+        }
+
+        nav ul {
+            flex-direction: column;  
+            align-items: center;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            font-size: 20px;
+            padding: 10px;
+            display: block;
+        }
+    }
+</style>
+
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+
+<div style="padding: 20px;">
+    <h2>Resize the browser window to test the responsive menu:</h2>
+    <ul>
+        <li><b>> 1024px:</b> Horizontal menu + dark background</li>
+        <li><b>768px – 1024px:</b> Horizontal menu + blue background</li>
+        <li><b><= 768px:</b> Vertical stacked menu + different background</li>
+    </ul>
+</div>
+
+</body>
+</html>
